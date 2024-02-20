@@ -1,0 +1,3 @@
+C:/Users/humph/OneDrive/Desktop/Cvar/C-Variables-and-Data-Types/cmake-build-debug/CMakeFiles/C_Variables_and_Data_Types.dir
+C:/Users/humph/OneDrive/Desktop/Cvar/C-Variables-and-Data-Types/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/humph/OneDrive/Desktop/Cvar/C-Variables-and-Data-Types/cmake-build-debug/CMakeFiles/rebuild_cache.dir
