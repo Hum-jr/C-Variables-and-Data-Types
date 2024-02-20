@@ -41,6 +41,42 @@
 //Arrays have dimensions - 2D,3D...
 
 //Using pointers
+//Using structs
+//Using unions
+/*Union refers to a collection  of members (variables) of possibly
+ different types into a single user defined type*/
+
+//using type casting and type qualifiers
+
+//Type casting/Typeconversion
+//  -The proces of converting a data type to another type.
+
+//Implicit type conversions
+
+//  Integral promotion
+//  Relies on type ranks
+//  Promotion occurs when perfoming mathematical operations on integer values
+
+//Usual arithmetic conversions
+//  Automatically converts operands
+
+//Type qualifiers
+//  const-variables that can not be modified by the program once they are defined
+//  volatile-variables that can be modified by sth outside the program
+
+
+//Using Date and Time
+//  #include <time.h>
+//
+
+//Using Localisation
+
+
+
+
+
+
+
 
 #include <stdio.h>
 
