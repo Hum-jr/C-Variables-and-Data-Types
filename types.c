@@ -70,7 +70,10 @@
 //
 
 //Using Localisation
+//using the header <locale.h>
 
+//TYpes
+//
 
 
 
@@ -79,9 +82,70 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+#include <time.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <string.h>
+
+struct employee{
+    uint8_t employeeNro;
+    char name[200];
+    float salary;
+    int age:7;
+    struct tm dob;
+};
+
+const char companyName[100]="SingularSight";
+void readEmployees(struct employee * employees,int nEmployees);
+void printEmployees(struct employee employee[100],int employees);
 
 int main(){
-    float x = 3.0;
-    printf("%f",x);
-    return 0;
+    struct employee employess[100];
+    int nEmployee;
+
+    printf("Welcome to the employee system of: %s\n",companyName);
+    printf("How many employees do you want to import:");
+
+    scanf("%d",&nEmployee);
+    readEmployees(employess,nEmployee);
+    printEmployees(employess,nEmployee);
+
+
+    exit(0);
+}
+
+void readEmloyees(struct employee * employees,int nEmployees){
+    for (int i=0; i < nEmployees; i++){
+        printf("Processing employee %d \n",i+1);
+        printf("Please provide the employee number,salary and DOB (dd/mm/yyyy): ");
+
+        char empName[200];
+        int dayDob,monthDob,yearDob;
+        scanf("%s %d %f %d/%d/%d",empName,&employees[i].employeeNro,&employees[i].salary,&dayDob,&monthDob,&yearDob);
+
+        strcpy(employees[i].name,empName);
+
+        struct tm dobObj;
+        dobObj.tm_yday =dayDob;
+        dobObj.tm_mon = monthDob;
+        dobObj.tm_year = yearDob-1900;
+
+        time_t currTimeSec;
+    }
+}
+
+void printEmployees(struct employee employees[100],int nEmployees){
+    printf("\n");
+    setlocale(LC_ALL,"");
+    struct lconv * currentLocale = localeconv();
+
+    printf("Printing employees list: \n");
+    for (int i = 0; i < nEmployees; ++i) {
+        struct employee emp = employees[i];
+        printf("Name: %s Employee No: %s Salary: %.2f DOB: %02d/%02d/%d Age: %d\n",emp.name,emp.salary, currentLocale -> int_curr_symbol,emp.dob.tm_yday,emp.dob.tm_mon,emp.dob.tm_year+1900,emp.age);
+
+    }
 }
